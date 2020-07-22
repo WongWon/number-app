@@ -6,11 +6,11 @@ const Forecast = () => {
     function getForecast() {
         useEffect(() => {
             fetch(
-                'https://api.openweathermap.org/data/2.5/weather?q=Auckland&appid='+process.env.REACT_APP_API_KEY
+                'https://api.openweathermap.org/data/2.5/weather?q=Auckland&appid$=${process.env.REACT_APP_API_KEY}'
             )
             .then((res) => res.json())
-            .then((res) => {
-                setResponseObj(res)
+            .then((data) => {
+                console.log(data)
             })
         }, [])
 
@@ -25,3 +25,5 @@ const Forecast = () => {
        </div>
     )
 }}
+
+export default Forecast
