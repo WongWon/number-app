@@ -1,3 +1,3 @@
 export interface IUserInput {
-    SearchQuery: (string |null );
+    number: (Number |null );
 }
