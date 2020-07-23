@@ -1,14 +1,10 @@
 import React from 'react';
-const Condition = (props) => {
-   return (
-       <div>
-           {props.response.cod === 200 ?
-               <div>
-                   <p><strong>{props.response.name}</strong></p>
-               </div>
-           : null
-           }
-       </div>
-   )
+
+class Condition extends React.Component{
+    render(){
+        return <h2>Fact: {this.props.responseObj.text}</h2>
+    }
 }
-export default Condition;
+
+export default Condition
+
