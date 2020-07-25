@@ -2,6 +2,8 @@ import React, { useState } from  'react';
 import Condition from '../Condition/Condition'
 import  './Number.css';
 
+import { TextField, Button, Container } from '@material-ui/core'
+
 const Number = () => {
     let [number, setNumber] = useState('')
     let [responseObj, setResponseObj] = useState(Object);
@@ -22,21 +24,40 @@ const Number = () => {
         } 
 
     return (
-        <div>
-            <div>
-                <Condition responseObj = {responseObj}/>
-            </div>
-           <form onSubmit={getNumber}>
-                <input
-                    type="number"
-                    min =  "0"
-                    max = "100"
+        <div className = "responseContainer">
+
+            <Condition responseObj = {responseObj}/>
+
+            <Container>
+            <form onSubmit={getNumber} id = "formContainer">
+                    <TextField
+                    id = "numberInput"
+                    label = "Number"
+                    variant = "outlined"
+                    type = "number"
+                    InputProps={{
+                        inputProps: { 
+                            max: 100, min: 0 
+                        }
+                    }}
                     placeholder="Enter Number"
                     value={number}
-                    onChange={(e) => setNumber(e.target.value)}
-                />
-                <button type="submit">Get Number</button> 
+                    onChange={(e) => setNumber(e.target.value)}/>
+
+
+                    <Button
+                    type = "submit"
+                    variant = "contained"
+                    size = "small"
+                    color = "primary"
+                    id = "submitButton">
+
+                        Get Number Fact
+                    </Button>
+
             </form>
+
+            </Container>
        </div>
     )
 }

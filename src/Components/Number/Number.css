@@ -6,3 +6,14 @@ input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none; 
     margin: 0; 
 }
+
+#formContainer{
+    margin: auto;
+    margin: 20px;
+}
+
+#submitButton{
+    margin: auto;
+    margin: 10px;
+}
+
