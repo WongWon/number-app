@@ -4,10 +4,10 @@ import  './Number.css';
 
 const Number = () => {
     let [number, setNumber] = useState('')
-    let [responseObj, setResponseObj] = useState({});
+    let [responseObj, setResponseObj] = useState(Object);
+
 
     const uriEncodedNumber = encodeURIComponent(number)
-    const carName = "ford"
 
 
     function getNumber(e: { preventDefault: () => void; }) {
@@ -24,11 +24,13 @@ const Number = () => {
     return (
         <div>
             <div>
-                <Condition responseObj={responseObj}/> 
+                <Condition responseObj = {responseObj}/>
             </div>
            <form onSubmit={getNumber}>
                 <input
-                    type="text"
+                    type="number"
+                    min =  "0"
+                    max = "100"
                     placeholder="Enter Number"
                     value={number}
                     onChange={(e) => setNumber(e.target.value)}
